@@ -1,0 +1,81 @@
+""" Write a program to obtain the start time and end time for a stage event show. If the user enters a different format other than specified, an exception occurs, and the program is interrupted. To avoid that, handle the exception and prompt the user to enter the right format as specified.
+
+
+
+Start time and end time should be in the format 'YYYY-MM-DD HH:MM:SS'
+
+If the input is in the above format, print the start time and end time.
+
+If the input does not follow the above format, print "Event time should be in the format 'YYYY-MM-DD HH:MM:SS'"
+
+Input format :
+First line of input consists of start time of the event.
+
+Second line of the input consists of end time of the event.
+
+Output format :
+If the input is in the given format, print start time and end time.
+
+If the input does not follow the given format, print "Event time should be in the format 'YYYY-MM-DD HH:MM:SS'"
+
+"""
+
+import datetime
+def validate(date_text1,date_text2):
+    try:
+        datetime.datetime.strptime(date_text1, '%Y-%m-%d %H:%M:%S')
+        datetime.datetime.strptime(date_text2, '%Y-%m-%d %H:%M:%S')
+        print(date_text1)
+        print(date_text2)
+    except:
+        print("Event time should be in the format 'YYYY-MM-DD HH:MM:SS")
+
+date_text1 = input()
+date_text2 = input()
+validate(date_text1,date_text2)
+
+""" Jamie is managing his investment portfolio and wants to keep track of the details. He has investments in various schemes and needs a program to display these details. Jamie has provided the following information for each investment:
+
+Name of the investment scheme.
+Amount deposited in the scheme.
+Current value of the investment.
+
+
+Write a program that takes the name of the investment scheme, the amount deposited, and the current value of the investment as input, and displays these details. Jamie wants the program to handle potential input errors gracefully. If the user enters invalid input for the deposit or cost, the program should print "Invalid Input format".
+
+Input format :
+The first line of input consists of a string, representing the name of the investment scheme.
+
+The second line of input consists of a floating-point number F, representing the amount deposited in the scheme.
+
+The third line of input consists of a floating-point number C, representing the current value of the investment.
+
+Output format :
+The first line of output displays the name of the investment scheme.
+
+The second line of output displays float value representing the amount deposited in the scheme rounded to one decimal point.
+
+The third line of output displays float value representing the current value of the investment rounded to one decimal point.
+
+If there is an invalid input format, the program should output:
+
+"Invalid Input format"
+
+"""
+
+#Function to display the details
+def display(name,depAmt,cost):
+    print(name)
+    print(depAmt)
+    print(cost)
+
+#Main Program
+try:
+    name = input()
+    deposit = float(input())
+    cost = float(input())
+    display(name,deposit,cost)
+
+except ValueError as ve:
+    print('Invalid Input format')
+    
